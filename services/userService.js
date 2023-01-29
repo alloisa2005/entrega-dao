@@ -2,9 +2,7 @@
 import PersistenceFactory from '../daos/persistenceFactory.js'
 
 export default class UsersService {
-    constructor() {
-        // this.usersDao = new UsersDaoArray()
-        // this.usersDao = new UserDaoFile()
+    constructor() {        
         this.usersDao
         this.init()
     }
