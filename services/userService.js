@@ -1,6 +1,5 @@
-// import UsersDaoArray from "../daos/userDaoArray.js";
-// import UserDaoFile from "../daos/userDaoFile.js";
-import PersistenceFactory from "../daos/persistenceFactory.js"
+
+import PersistenceFactory from '../daos/persistenceFactory.js'
 
 export default class UsersService {
     constructor() {
@@ -22,3 +21,4 @@ export default class UsersService {
         return await this.usersDao.save(user)
     }
 }
+

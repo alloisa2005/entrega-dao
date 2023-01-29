@@ -1,5 +1,5 @@
-import UsersService from "../services/userService.js";
-import UserDTO from "../dtos/userDTO.js";
+import UsersService from '../services/userService.js';
+import UserDTO from '../dtos/userDTO.js';
 const userService = new UsersService()
 
 const getUsers = async(req, res) => {
@@ -9,8 +9,7 @@ const getUsers = async(req, res) => {
 }
 
 const saveUser = async (req, res) => {
-    let user = req.body
-    //TODO: Validaciones...
+    let user = req.body    
     let result = await userService.addUser(user)
     res.send(new UserDTO(result))
 }

@@ -1,6 +1,7 @@
 import config from '../config.js'
 
-export default class PersistenceFactory {
+
+class PersistenceFactory {
     static getPersistence = async () => {
         switch (config.app.persistence) {
             case "ARRAY":
@@ -10,9 +11,11 @@ export default class PersistenceFactory {
             case "FILE":
                 let { default: UserDaoFile } = await import('./userDaoFile.js')
                 return new UserDaoFile()
-            // case "DB":
-            //     let { default: UsersDaoDB } = await import('./userDaoDB.js')
-            //     return new UsersDaoDB()
+             case "MONGO":
+                 let { default: UsersDaoMongo } = await import('./userDAOMongo.js')
+                 return new UsersDaoMongo()
         }
     }
 }
+
+export default PersistenceFactory;
